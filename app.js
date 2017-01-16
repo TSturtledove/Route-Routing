@@ -3,7 +3,7 @@ var app = angular.module("longRoad", ["ngRoute"])
 app.config(function($routeProvider) {
   $routeProvider
   .when("/", {
-    controller: "otherwise",
+    controller: "home",
     templateUrl: "other.html"
   })
 
@@ -15,6 +15,7 @@ app.config(function($routeProvider) {
     controller: "highway100",
     templateUrl: "hw100.html"
   })
+  .otherwise({redirectTo:'/'})
 })
 
 app.controller("highway75", function($scope) {
@@ -27,5 +28,5 @@ app.controller("highway100", function($scope) {
   $scope.highwayDescription = "Minnesota State Highway 100 (MN 100) is a state highway in the Twin Cities region of Minnesota, which runs from its interchange with Interstate 494 (I-494) in Bloomington and continues north to its northern terminus at its interchange with I-694 in Brooklyn Center. The southern end of MN 100 continues in Bloomington as Normandale Boulevard (County Road 34, CR 34). At the north end, the main line of MN 100 merges with I-694 in Brooklyn Center. The route is 16 miles (26 km) in length."
 })
 
-app.controller("otherwise", function($scope) {
+app.controller("home", function($scope) {
 })
