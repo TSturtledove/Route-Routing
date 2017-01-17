@@ -1,6 +1,8 @@
 var app = angular.module("longRoad", ["ngRoute"])
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
+$locationProvider.hashPrefix("");
+
   $routeProvider
   .when("/", {
     controller: "home",
